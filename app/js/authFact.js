@@ -4,7 +4,7 @@ myApp.factory("authFact", [function () {
         authFact.authToken = accessToken;
     };
     authFact.getAccessToken = function () {
-        authFact.authToken;
+        return authFact.authToken;
     };
     
     return authFact;
