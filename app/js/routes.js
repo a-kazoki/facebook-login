@@ -4,7 +4,7 @@ myApp.config(["$routeProvider", function($routeProvider) {
             templateUrl : "views/home/login.html",
             controller : "homeCtrl"
         })
-        .when("/", {
+        .when("/dashboard", {
             templateUrl : "views/home/dashboard.html",
             controller : "dashboardCtrl",
             authenticated : true
