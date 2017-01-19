@@ -15,7 +15,7 @@ myApp.config(["$routeProvider", function($routeProvider) {
         });
 }]);
 
-myApp.run(["$routeScope", "$location", "authFact", function ($routeScope, $location, authFact) {
+myApp.run(["$rootScope", "$location", "authFact", function ($rootScope, $location, authFact) {
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
         console.log(event);
         console.log(next);
