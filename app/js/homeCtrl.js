@@ -8,7 +8,7 @@ myApp.controller("homeCtrl", ["$scope", "authFact", "$location", "$cookieStore",
                     console.log('Good to see you, ' + response.name + '.');
                     console.log(response);
                     $$cookieStore.put("userObj", response);
-                    var accessToken = FB.getAuthResponse().accessToken;
+                    var accessToken = FB.getAuthResponse();
                     console.log(accessToken);
                     authFact.setAccessToken(accessToken);
                     $location.path("/dashboard");
