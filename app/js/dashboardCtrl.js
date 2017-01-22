@@ -1,3 +1,4 @@
-myApp.controller("dashboardCtrl", ["$scope", function ($scope) {
-    
+myApp.controller("dashboardCtrl", ["$scope", "$cookies", function ($scope, $cookies) {
+    var userObj = $cookies.get("userObj");
+    console.log("userObj");
 }]);
