@@ -12,7 +12,7 @@ myApp.controller("homeCtrl", ["$scope", "authFact", "$location", "$cookieStore",
                     console.log(accessToken);
                     authFact.setAccessToken(accessToken);
                     $location.path("/dashboard");
-                    $scope.$apply();
+                    
                 });
             } else {
                 console.log('User cancelled login or did not fully authorize.');
