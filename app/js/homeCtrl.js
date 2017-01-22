@@ -18,5 +18,6 @@ myApp.controller("homeCtrl", ["$scope", "authFact", "$location", "$cookies", fun
                 console.log('User cancelled login or did not fully authorize.');
             }
         }, {scope: 'email,user_likes'});
+        console.log(scope);
     };
 }]);
