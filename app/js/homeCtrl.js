@@ -1,4 +1,4 @@
-myApp.controller("homeCtrl", ["$scope", "authFact", "$location", "$cookieStore", function ($scope, authFact, $location, $cookieStore) {
+myApp.controller("homeCtrl", ["$scope", "authFact", "$location", function ($scope, authFact, $location) {
     $scope.name = "Login Please";
     $scope.FBLogin = function () {
         FB.login(function (response) {
@@ -7,12 +7,11 @@ myApp.controller("homeCtrl", ["$scope", "authFact", "$location", "$cookieStore",
                 FB.api('/me', function (response) {
                     console.log('Good to see you, ' + response.name + '.');
                     console.log(response);
-                    $cookieStore.put("userObj", response);
                     var accessToken = FB.getAuthResponse().accessToken;
                     console.log(accessToken);
                     authFact.setAccessToken(accessToken);
                     $location.path("/dashboard");
-                    
+                    $scope.$apply();
                 });
             } else {
                 console.log('User cancelled login or did not fully authorize.');
