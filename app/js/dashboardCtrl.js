@@ -7,7 +7,7 @@ myApp.controller("dashboardCtrl", ["$scope", "$location", "$cookies", function (
     
     $scope.logout = function () {
         $location.path("/");
-        $cookies.removeAll();
+        $cookies.remove("accessToken");
         $scope.theid = "you are not loged in";
     };
 }]);
