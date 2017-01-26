@@ -1,6 +1,6 @@
 myApp.controller("dashboardCtrl", ["$scope", "$cookies", function ($scope, $cookies) {
-    var userObj = $cookies.get("userObj");
+    var myFavorite = $cookies.get("userObj");
     var allcookies = $cookies.getAll();
-    console.log(userObj);
+    console.log(myFavorite);
     console.log(allcookies);
 }]);
