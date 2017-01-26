@@ -1,4 +1,4 @@
-myApp.controller("homeCtrl", ["$scope", "$rootScope", "authFact", "$location", "$cookies", function ($scope, $rootScope, authFact, $location, $cookies) {
+myApp.controller("homeCtrl", ["$scope", "authFact", "$location", "$cookies", function ($scope, authFact, $location, $cookies) {
     $scope.name = "Login Please";
     $scope.FBLogin = function () {
         FB.login(function (response) {
@@ -7,8 +7,6 @@ myApp.controller("homeCtrl", ["$scope", "$rootScope", "authFact", "$location", "
                 FB.api('/me', function (response) {
                     console.log('Good to see you, ' + response.name + '.');
                     console.log(response);
-                    var $rootScope.accessName = response;
-                    console.log(accessName);
                     $cookies.put("userObj", response);
                     var accessToken = FB.getAuthResponse().accessToken;
                     console.log(accessToken);
