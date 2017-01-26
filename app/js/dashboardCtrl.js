@@ -9,6 +9,6 @@ myApp.controller("dashboardCtrl", ["$scope", "$location", "$cookies", function (
         $location.path("/");
         $cookies.remove("accessToken");
         $cookies.remove("userid");
-        $scope.theid = "&nbsp;";
+        $scope.theid = "";
     };
 }]);
