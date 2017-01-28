@@ -17,6 +17,9 @@ myApp.controller("homeCtrl", ["$scope", "authFact", "$location", "$cookies", fun
             } else {
                 console.log('User cancelled login or did not fully authorize.');
             }
+        });
+        FB.login(function (response) {
+            console.log(response);
         }, { scope: 'email' });
     };
 }]);
