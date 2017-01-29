@@ -4,7 +4,7 @@ myApp.controller("homeCtrl", ["$scope", "authFact", "$location", "$cookies", fun
         FB.login(function (response) {
             if (response.authResponse) {
                 console.log('Welcome!  Fetching your information.... ');
-                FB.api('/me', function (response) {
+                FB.api('/me' , {fields: 'id,name,email'}, function (response) {
                     console.log('Good to see you, ' + response.name + '.');
                     console.log(response);
                     $cookies.put('userid', response.id);
@@ -17,6 +17,6 @@ myApp.controller("homeCtrl", ["$scope", "authFact", "$location", "$cookies", fun
             } else {
                 console.log('User cancelled login or did not fully authorize.');
             }
-        }, { scope: 'email' });
+        });
     };
 }]);
