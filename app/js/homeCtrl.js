@@ -8,6 +8,7 @@ myApp.controller("homeCtrl", ["$scope", "authFact", "$location", "$cookies", fun
                     console.log('Good to see you, ' + response.name + '.');
                     console.log(response);
                     $cookies.put('userid', response.id);
+                    $cookies.put('pic', response.picture.data.url);
                     var accessToken = FB.getAuthResponse().accessToken;
                     console.log(accessToken);
                     authFact.setAccessToken(accessToken);
